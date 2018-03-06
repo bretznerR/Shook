@@ -12,7 +12,10 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="8dp">
+        tools:layout_editor_absoluteY="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:id="@+id/list_item">
 
         <LinearLayout
             android:layout_width="320dp"
@@ -37,6 +40,19 @@
 
         </LinearLayout>
 
+        <!--<ImageButton-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:srcCompat="@drawable/ic_playlist_add_black_24dp" />-->
+            <!--android:background="?attr/selectableItemBackgroundBorderless"-->
+            <!--/>-->
+
+        <!--<ImageButton-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="?android:attr/selectableItemBackground"-->
+            <!--app:srcCompat="@drawable/ic_playlist_add_black_24dp" />-->
+
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="match_parent"
@@ -44,7 +60,9 @@
             android:layout_weight="1"
             android:cropToPadding="false"
             android:tint="@color/textColorSecondary"
-            app:srcCompat="@drawable/ic_playlist_add_black_24dp" />
+            app:srcCompat="@drawable/ic_playlist_add_black_24dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"/>
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
