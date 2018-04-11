@@ -15,7 +15,6 @@ public class SearchFragment extends Fragment {
 
     public SearchFragment() {
 
-
     }
 
     @Override

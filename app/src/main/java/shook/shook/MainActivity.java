@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         // Launches the authentication process
         deezerConnect.authorize(this, permissions, listener);
 
-
+        searchBarDeezer(deezerConnect, "eminem");
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -156,9 +156,15 @@ public class MainActivity extends AppCompatActivity {
         RequestListener listener = new JsonRequestListener() {
 
             public void onResult(Object result, Object requestId) {
-                List<Track> albums = (List<Track>) result;
+                List<Track> tracks = (List<Track>) result;
 
-                Log.d("Deezer", albums.toString());
+
+                for (Track track : tracks) {
+                    Log.d("Deezer", track.getTitle().toString());
+                    Log.d("Deezer", track.getAlbum().getTitle().toString());
+                    Log.d("Deezer", track.getArtist().getName().toString());
+                    Log.d("Deezer", "===================================================");
+                }
             }
 
             public void onUnparsedResult(String requestResponse, Object requestId) {}
@@ -167,7 +173,6 @@ public class MainActivity extends AppCompatActivity {
         };
 
         // create the request
-        //long artistId = 11472;
         DeezerRequest request = DeezerRequestFactory.requestSearchTracks(query, SearchResultOrder.Ranking);
 
         // set a requestId, that will be passed on the listener's callback methods
