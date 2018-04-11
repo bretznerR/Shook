@@ -29,7 +29,7 @@ public class ResultFragment extends Fragment {
         list = (RecyclerView) rootView.findViewById(R.id.recyclerView);
         ArrayList stringList= new ArrayList();
         CustomAdapter adapter = new CustomAdapter(stringList,getActivity());
-        list.setAdapter(adapter);
+        //list.setAdapter(adapter);
         return rootView;
     }
 }
