@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 
@@ -16,7 +17,7 @@ import java.util.ArrayList;
 
 public class ResultFragment extends Fragment {
 
-    RecyclerView list;
+    ListView list;
 
     public ResultFragment() {
         // Required empty public constructor
@@ -26,7 +27,7 @@ public class ResultFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.activity_search_results, container, false);
-        list = (RecyclerView) rootView.findViewById(R.id.recyclerView);
+        list = (ListView) rootView.findViewById(R.id.recyclerView);
         ArrayList stringList= new ArrayList();
         CustomAdapter adapter = new CustomAdapter(stringList,getActivity());
         list.setAdapter(adapter);
