@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
                     showFragment(new SearchFragment());
                     return true;
                 case R.id.navigation_notifications:
-                    showFragment(new SearchFragment());
+                    showFragment(new PlaylistsFragment());
                     return true;
             }
             return false;
