@@ -23,7 +23,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/music_title"
                 android:layout_width="match_parent"
                 android:layout_height="22dp"
                 android:text="Lost In The World"
@@ -31,7 +31,7 @@
                 android:textSize="17sp" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/music_artistalbum"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
                 android:text="Kanye West, Bon Iver - My Beautiful Dark Twisted Fantasy"

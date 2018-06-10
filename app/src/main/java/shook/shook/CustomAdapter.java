@@ -1,11 +1,10 @@
 package shook.shook;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -14,48 +13,55 @@ import java.util.ArrayList;
  * Created by Adrien on 06/03/2018.
  */
 
-public class CustomAdapter extends ArrayAdapter {
+public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
 
-    private ArrayList dataSet;
-    Context mContext;
+    private LayoutInflater inflater;
+    private Context context;
+    private ArrayList<Music> musics;
 
-    // View lookup cache
-    private static class ViewHolder {
-        TextView txtName;
-
-    }
-
-    public CustomAdapter(ArrayList data, Context context) {
-        super(context, R.layout.activity_search_result_item, data);
-        this.dataSet = data;
-        this.mContext = context;
-
-    }
-
-    @Nullable
-    @Override
-    public String getItem(int position) {
-        return (String) dataSet.get(position);
+    public CustomAdapter(ArrayList<Music> list,Context context) {
+        inflater = LayoutInflater.from(context);
+        this.context = context;
+        this.musics=list;
+        System.out.println(this.musics);
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        View view = inflater.inflate(R.layout.activity_search_result_item, parent, false);
+        return new MyViewHolder(view);
+    }
 
-        ViewHolder viewHolder; // view lookup cache stored in tag
 
-        if (convertView == null) {
+    @Override
+    public void onBindViewHolder(MyViewHolder holder, int position) {
+        Music music = this.musics.get(position);
+        holder.display(music);
+    }
 
-            viewHolder = new ViewHolder();
-            LayoutInflater inflater = LayoutInflater.from(getContext());
-            convertView = inflater.inflate(R.layout.activity_search_result_item, parent, false);
-//            viewHolder.txtName = (TextView) convertView.findViewById(R.id.name);
-            convertView.setTag(viewHolder);
-        } else {
-            viewHolder = (ViewHolder) convertView.getTag();
+    @Override
+    public int getItemCount() {
+        return this.musics.size();
+    }
+
+    class MyViewHolder extends RecyclerView.ViewHolder {
+
+        private TextView title;
+        private TextView artist_album;
+        private Music currentMusic;
+
+        public MyViewHolder(View itemView) {
+            super(itemView);
+            title = ((TextView) itemView.findViewById(R.id.title));
+            artist_album = ((TextView) itemView.findViewById(R.id.music_artistalbum));
         }
 
-        viewHolder.txtName.setText(getItem(position));
-        // Return the completed view to render on screen
-        return convertView;
+        public void display(Music music) {
+            this.currentMusic = music;
+            this.title.setText(music.getTitle());
+            this.artist_album.setText(music.getArtist().getName()+" - "+music.getAlbum());
+        }
     }
+
 }
