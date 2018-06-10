@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
                     showFragment(new HomeFragment());
                     return true;
                 case R.id.navigation_search:
-                    showFragment(new SearchFragment());
+                    showFragment(new ResultFragment());
                     return true;
                 case R.id.navigation_notifications:
                     showFragment(new SearchFragment());
