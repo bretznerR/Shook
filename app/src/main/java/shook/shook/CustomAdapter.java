@@ -30,6 +30,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.activity_search_result_item, parent, false);
+        System.out.println("AHAHHA : "+view.findViewById(R.id.music_artistalbum));
         return new MyViewHolder(view);
     }
 
@@ -53,14 +54,15 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            title = ((TextView) itemView.findViewById(R.id.title));
-            artist_album = ((TextView) itemView.findViewById(R.id.music_artistalbum));
+            this.title = ((TextView) itemView.findViewById(R.id.music_title));
+            this.artist_album = ((TextView) itemView.findViewById(R.id.music_artistalbum));
         }
 
         public void display(Music music) {
             this.currentMusic = music;
             this.title.setText(music.getTitle());
             this.artist_album.setText(music.getArtist().getName()+" - "+music.getAlbum());
+
         }
     }
 

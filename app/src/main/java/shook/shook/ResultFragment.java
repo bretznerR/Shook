@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
 import java.util.ArrayList;
 
@@ -38,10 +37,10 @@ public class ResultFragment extends Fragment {
         ArrayList listMusic= new ArrayList<Music>();
         /*TEST*/
         listMusic.add(new Music("Ghost Town",new Artist("Kanye West"),null,"Ye"));
+        listMusic.add(new Music("Voilà",new Artist("N.E.R.D"),null,"NO ONE EVER REALLY DIES"));
         /*FIN TEST*/
-        CustomAdapter adapter = new CustomAdapter(listMusic,getActivity());
         list.setLayoutManager(new LinearLayoutManager(getActivity()));
-        list.setAdapter(adapter);
+        list.setAdapter(new CustomAdapter(listMusic,getActivity()));
         return rootView;
     }
 }
