@@ -1,63 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginTop="10dp"
+    android:background="?attr/selectableItemBackgroundBorderless"
+    android:clickable="true"
+    android:orientation="horizontal"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    tools:layout_editor_absoluteY="8dp">
+
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="368dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="8dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:clickable="true"
-        android:id="@+id/list_item">
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/music_title"
-                android:layout_width="match_parent"
-                android:layout_height="22dp"
-                android:text="Lost In The World"
-                android:textColor="@color/textColorPrimary"
-                android:textSize="17sp" />
-
-            <TextView
-                android:id="@+id/music_artistalbum"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:text="Kanye West, Bon Iver - My Beautiful Dark Twisted Fantasy"
-                android:textColor="@color/textColorSecondary"
-                android:textSize="12sp" />
-
-        </LinearLayout>
-
-        <!--<ImageButton-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--app:srcCompat="@drawable/ic_playlist_add_black_24dp" />-->
-            <!--android:background="?attr/selectableItemBackgroundBorderless"-->
-            <!--/>-->
-
-        <!--<ImageButton-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:background="?android:attr/selectableItemBackground"-->
-            <!--app:srcCompat="@drawable/ic_playlist_add_black_24dp" />-->
-
-        <ImageView
-            android:id="@+id/imageView4"
+        <TextView
+            android:id="@+id/music_title"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:cropToPadding="false"
-            android:tint="@color/textColorSecondary"
-            app:srcCompat="@drawable/ic_playlist_add_black_24dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:clickable="true"/>
+            android:layout_height="22dp"
+            android:text="Lost In The World"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/music_artistalbum"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:text="Kanye West, Bon Iver - My Beautiful Dark Twisted Fantasy"
+            android:textColor="@color/textColorSecondary"
+            android:textSize="12sp" />
 
     </LinearLayout>
+
+    <!--<ImageButton-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--app:srcCompat="@drawable/ic_playlist_add_black_24dp" />-->
+    <!--android:background="?attr/selectableItemBackgroundBorderless"-->
+    <!--/>-->
+
+    <!--<ImageButton-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="?android:attr/selectableItemBackground"-->
+    <!--app:srcCompat="@drawable/ic_playlist_add_black_24dp" />-->
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:cropToPadding="false"
+        android:tint="@color/textColorSecondary"
+        app:srcCompat="@drawable/ic_playlist_add_black_24dp" />
+
+</LinearLayout>

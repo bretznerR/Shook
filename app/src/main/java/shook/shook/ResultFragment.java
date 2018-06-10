@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class ResultFragment extends Fragment {
 
-    RecyclerView list;
+    private RecyclerView list;
 
     public ResultFragment() {
         // Required empty public constructor
@@ -36,6 +36,10 @@ public class ResultFragment extends Fragment {
         list = (RecyclerView) rootView.findViewById(R.id.recyclerView);
         ArrayList listMusic= new ArrayList<Music>();
         /*TEST*/
+        listMusic.add(new Music("Ghost Town",new Artist("Kanye West"),null,"Ye"));
+        listMusic.add(new Music("Voilà",new Artist("N.E.R.D"),null,"NO ONE EVER REALLY DIES"));
+        listMusic.add(new Music("Ghost Town",new Artist("Kanye West"),null,"Ye"));
+        listMusic.add(new Music("Voilà",new Artist("N.E.R.D"),null,"NO ONE EVER REALLY DIES"));
         listMusic.add(new Music("Ghost Town",new Artist("Kanye West"),null,"Ye"));
         listMusic.add(new Music("Voilà",new Artist("N.E.R.D"),null,"NO ONE EVER REALLY DIES"));
         /*FIN TEST*/
