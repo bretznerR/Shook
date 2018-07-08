@@ -364,7 +364,7 @@ echo "include ':libraries:drag-sort-listview:library'" >> ../settings.gradle
 ```
 Then add the following dependency to your build.gradle project:
 ```groovy
-compile project(':libraries:drag-sort-listview:library')
+implementation project(':libraries:drag-sort-listview:library')
 ```
 
 Contributing

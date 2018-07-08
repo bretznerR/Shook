@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
+import v.shook.R;
+
 /**
  * Created by Adrien on 06/03/2018.
  */

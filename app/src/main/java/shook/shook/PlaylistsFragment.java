@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import v.shook.R;
+
 
 /**
  * Created by Adrien on 10/06/2018.
